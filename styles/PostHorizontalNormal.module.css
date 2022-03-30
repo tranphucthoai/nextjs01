@@ -1,0 +1,15 @@
+.post{
+    display: flex;
+    align-items: center;
+}
+.post__thumb{
+    max-width: 100%;
+}
+.post-text{
+   
+}
+.post__title{
+    font-size: 26px;
+    font-weight: 600;
+}
+.post__des{}
