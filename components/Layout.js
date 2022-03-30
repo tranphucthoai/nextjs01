@@ -4,10 +4,9 @@ import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
 import createSagaMiddleware from "redux-saga";
 const sagaMiddleware = createSagaMiddleware();
-import rootSaga from "./sagas/rootSaga";
-import myReducer from "./reducers";
+import store from "../store/store";
 
-var store = createStore(myReducer, applyMiddleware(sagaMiddleware));
+// var store = createStore(myReducer, applyMiddleware(sagaMiddleware));
 
 function Layout({ children }) {
   return (

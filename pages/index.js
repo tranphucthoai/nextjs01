@@ -1,7 +1,19 @@
 import Head from "next/head";
 import Link from "next/link";
+import { useDispatch, useSelector } from "react-redux";
+import { GET_ALL_CATEGORIES } from "./../constans";
 
 export default function Home() {
+  const dispatch = useDispatch();
+  const handleClick = () => {
+    dispatch({ type: GET_ALL_CATEGORIES });
+    console.log("data", data);
+  };
+
+  const { data } = useSelector((state) => state.CategoriesReducer);
+
+  console.log("data", data);
+
   return (
     <section>
       <Head>
@@ -12,6 +24,7 @@ export default function Home() {
       <Link href="posts">
         <a>Posts</a>
       </Link>
+      <div onClick={handleClick()}>Get categogies</div>
     </section>
   );
 }
