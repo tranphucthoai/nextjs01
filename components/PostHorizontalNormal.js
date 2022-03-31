@@ -10,10 +10,7 @@ const PostHorizontalNormal = ({ data = {} }) => {
         <a href="">
           {/* <Image
             alt=""
-            src={data.thumb?.replace(
-              "https://f.hubspotusercontent40.net/hubfs",
-              ""
-            )}
+            src={data.thumb}
             layout="fill"
           /> */}
         </a>

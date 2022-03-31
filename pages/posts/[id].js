@@ -1,5 +1,4 @@
 import React from "react";
-import { useRouter } from "next/router";
 import { postsApi } from "../api";
 
 export const getStaticPaths = async (context) => {
@@ -30,8 +29,6 @@ export const getStaticProps = async (context) => {
   };
 };
 const Single = ({ data }) => {
-  console.log("data", data);
-
   return (
     <section>
       <h3>{data.title}</h3>

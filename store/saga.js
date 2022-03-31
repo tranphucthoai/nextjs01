@@ -1,17 +1,17 @@
 import { categoriesApi } from "./../pages/api";
-import { call, put, takeLatest } from "redux-saga/effects";
+import { call, put, takeLatest, takeEvery } from "redux-saga/effects";
 import {
   GET_ALL_CATEGORIES_SUCCESS,
   GET_ALL_CATEGORIES_FAILURE,
   GET_ALL_CATEGORIES,
 } from "../constans";
 
-function* getAllCatagories() {
+function* getAllCategories() {
   try {
-    let result;
-    yield call(async () => {
-      result = await categoriesApi.getAll();
+    const result = yield call(async () => {
+      return await categoriesApi.getAll();
     });
+
     if (result && result.length > 0) {
       yield put({ type: GET_ALL_CATEGORIES_SUCCESS, payload: result });
     } else {
@@ -23,7 +23,7 @@ function* getAllCatagories() {
 }
 
 function* Saga() {
-  yield takeLatest(GET_ALL_CATEGORIES, getAllCatagories);
+  yield takeLatest(GET_ALL_CATEGORIES, getAllCategories);
 }
 
 export default Saga;

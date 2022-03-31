@@ -19,7 +19,6 @@ const CategoriesReducer = (state = initState, action) => {
         ...state,
         isLoading: true,
       };
-
     case GET_ALL_CATEGORIES_SUCCESS:
       return {
         ...state,
